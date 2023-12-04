@@ -35,9 +35,9 @@ class ModelTrainer:
                 test_array[:,:-1],
                 test_array[:,-1]
             )
-            models = {
-                "Random Forest Regressor": RandomForestRegressor(),
+            models = {          
                 "Decision Tree": DecisionTreeRegressor(),
+                "Random Forest Regressor": RandomForestRegressor(),
                 "Gradient Boosting": GradientBoostingRegressor(),                
                 "Linear Regression": LinearRegression(),
                 "K-Neighbors Regressor": KNeighborsRegressor(),
@@ -46,17 +46,17 @@ class ModelTrainer:
                 "AdaBoost Regressor": AdaBoostRegressor()
             }
             params={
+                "Decision Tree": {
+                    'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                    'splitter':['best','random'],
+                    'max_features':['sqrt','log2'],
+                },
                 "Random Forest Regressor":{
                     # 'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
-                 
                     # 'max_features':['sqrt','log2',None],
                     'n_estimators': [8,16,32,64,128,256]
                 },
-                "Decision Tree": {
-                    'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
-                    # 'splitter':['best','random'],
-                    # 'max_features':['sqrt','log2'],
-                },
+                
                 "Gradient Boosting":{
                     # 'loss':['squared_error', 'huber', 'absolute_error', 'quantile'],
                     'learning_rate':[.1,.01,.05,.001],
@@ -111,7 +111,7 @@ class ModelTrainer:
             final_model=best_model.fit(X_train,y_train)
             predicted=final_model.predict(X_test)
             r2_scored = r2_score(y_test,predicted)
-            logging.info("final model used to predict") 
+            logging.info(f"final model used to predict {best_model} scored {r2_scored}") 
             return r2_scored
         
         except Exception as e:
