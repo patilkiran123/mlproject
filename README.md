@@ -31,6 +31,7 @@ This project focuses on predicting math scores of students based on various demo
 - [Model Deployment on AWS Elastic Beanstalk](#model-deployment-on-aws-elastic-beanstalk)
 - [Interpretation](#interpretation)
 - [Recommendations](#recommendations)
+- [To Run on local machine](#to-run-on-local-machine)
 
 ## Data Exploration
 
@@ -63,3 +64,30 @@ Interpreted the model results and identified features that contribute significan
 ## Recommendations
 
 Provided recommendations and insights based on the model findings, suggesting potential areas for academic improvement.
+
+## To Run on local machine
+
+- Fork the Repo.
+
+- Open Conda Cmd,Nagivate to the project location and  run the following,
+> Code .
+
+- the project folder will open in VScode.
+
+- Open cmd line, run the following 
+> conda create -p venv python==3.11 -y
+
+- Then get inside the environment created
+> conda activate venv\
+
+- Then install the requirements.txt by typing the following in the cmd line
+> pip install -r requirements.txt
+
+- To predict run the following code
+> python application.py
+
+- Goto browser and open 
+"http://127.0.0.1:5000/predictdata"
+
+- Give the input in the web form the predication will be displayed.
+
