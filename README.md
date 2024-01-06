@@ -1,5 +1,5 @@
-# Student Performance Prediction Project
-End to End Machine Learning Project
+# Student Performance Prediction Project  
+In the dynamic field of education, gaining insights into student performance through thorough data analysis is vital for effective academic support. This project is dedicated to conducting in-depth data analysis on various features related to students' demographics, backgrounds, and academic engagement, with a focus on understanding patterns and trends. The objective is to extract valuable insights that inform strategies for enhancing academic intervention and support, fostering a deeper understanding of student performance dynamics.
 
 ## Problem Statement
 
